@@ -79,7 +79,16 @@ func Provider() tfbridge.ProviderInfo {
 		Repository:           "https://github.com/jen20/pulumi-digitalocean",
 		PreConfigureCallback: preConfigureCallback,
 		Resources: map[string]*tfbridge.ResourceInfo{
-			"digitalocean_ssh_key": {Tok: digitalOceanResource(digitalOceanMod, "SshKey")},
+			"digitalocean_certificate":  {Tok: digitalOceanResource(digitalOceanMod, "Certificate")},
+			"digitalocean_domain":       {Tok: digitalOceanResource(digitalOceanMod, "Domain")},
+			"digitalocean_droplet":      {Tok: digitalOceanResource(digitalOceanMod, "Droplet")},
+			"digitalocean_firewall":     {Tok: digitalOceanResource(digitalOceanMod, "Firewall")},
+			"digitalocean_floating_ip":  {Tok: digitalOceanResource(digitalOceanMod, "FloatingIp")},
+			"digitalocean_loadbalancer": {Tok: digitalOceanResource(digitalOceanMod, "LoadBalancer")},
+			"digitalocean_record":       {Tok: digitalOceanResource(digitalOceanMod, "DnsRecord")},
+			"digitalocean_ssh_key":      {Tok: digitalOceanResource(digitalOceanMod, "SshKey")},
+			"digitalocean_tag":          {Tok: digitalOceanResource(digitalOceanMod, "Tag")},
+			"digitalocean_volume":       {Tok: digitalOceanResource(digitalOceanMod, "Volume")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			"digitalocean_image": {Tok: digitalOceanDataSource(digitalOceanMod, "getImage")},

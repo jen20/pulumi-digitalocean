@@ -1,0 +1,13 @@
+export * from "./certificate";
+export * from "./dnsRecord";
+export * from "./domain";
+export * from "./droplet";
+export * from "./firewall";
+export * from "./floatingIp";
+export * from "./getImage";
+export * from "./loadBalancer";
+export * from "./sshKey";
+export * from "./tag";
+export * from "./volume";
+import * as config from "./config/index";
+export { config };
